@@ -11,6 +11,7 @@ import { ProfileComponent } from './user/profile/profile.component';
 import { AdminComponent } from './admin/admin/admin.component';
 import { NotFoundComponent } from './error/not-found/not-found.component';
 import { UnauthorizedComponent } from './error/unauthorized/unauthorized.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -26,8 +27,8 @@ import { UnauthorizedComponent } from './error/unauthorized/unauthorized.compone
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
-    
+    FontAwesomeModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
