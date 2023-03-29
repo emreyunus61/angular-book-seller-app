@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Book } from 'src/app/models/book.model';
 import { BookService } from 'src/app/services/book.service';
+import { BookComponent } from '../book/book.component';
 
 @Component({
   selector: 'app-admin',
@@ -11,6 +12,7 @@ export class AdminComponent  implements OnInit{
 
   bookList: Array<Book> =[];
 
+  @ViewChild(BookComponent) child: BookComponent | undefined;
   constructor(private bookService: BookService){}
 
 
@@ -19,6 +21,10 @@ export class AdminComponent  implements OnInit{
         this.bookList=data;
     });
    
+  }
+
+  createBookRequest(){
+    this.child?.showBookModal();
   }
 
 }
