@@ -13,8 +13,8 @@ export class BookComponent {
 
   errorMessage: string = "";
 
-  @Input() book: Book = new Book();
-  @Output() save = new EventEmitter<any>();
+  @Input() book: Book = new Book(); // parent sınıftan child sınıfa veri taşıma
+  @Output() save = new EventEmitter<any>(); //child sınıftan parent sınıfa veri taşıma
   constructor(private bookService: BookService) { }
 
   saveBook() {
